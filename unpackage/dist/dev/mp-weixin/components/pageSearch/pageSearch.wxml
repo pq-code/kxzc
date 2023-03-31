@@ -1,0 +1,1 @@
+<view class="page-search data-v-95474626"><view class="page-search-navbar data-v-95474626"><u-navbar wx:if="{{b}}" class="data-v-95474626" bindleftClick="{{a}}" u-i="95474626-0" bind:__l="__l" u-p="{{b}}"></u-navbar></view><view class="page-search-center data-v-95474626"><slot></slot></view></view>
