@@ -33,9 +33,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         b: common_vendor.o(searchFn),
         c: common_vendor.o(($event) => keyword.value = $event),
         d: common_vendor.p({
-          placeholder: "\u641C\u7D22",
+          placeholder: "搜索",
           ["show-action"]: true,
-          actionText: "\u641C\u7D22",
+          actionText: "搜索",
           width: "100",
           bgColor: "rgb(235, 235, 235)",
           animation: false,
@@ -47,7 +47,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           };
         }),
         f: common_vendor.p({
-          title: "\u641C\u7D22",
+          title: "搜索",
           backUrl: "home"
         }),
         g: common_vendor.p({
@@ -57,5 +57,5 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     };
   }
 });
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-68eb5c03"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/pages/home/searchList.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-68eb5c03"], ["__file", "E:/code/kxzc/pages/home/searchList.vue"]]);
 wx.createPage(MiniProgramPage);

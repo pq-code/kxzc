@@ -1,5 +1,6 @@
 "use strict";
 const ListItem = {
+  // listItem 组件
   listItem: {
     anchor: ""
   }

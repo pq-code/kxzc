@@ -1,5 +1,6 @@
 "use strict";
 const Picker = {
+  // picker
   picker: {
     show: false,
     showToolbar: true,
@@ -7,8 +8,8 @@ const Picker = {
     columns: () => [],
     loading: false,
     itemHeight: 44,
-    cancelText: "\u53D6\u6D88",
-    confirmText: "\u786E\u5B9A",
+    cancelText: "取消",
+    confirmText: "确定",
     cancelColor: "#909193",
     confirmColor: "#3c9cff",
     visibleItemCount: 5,

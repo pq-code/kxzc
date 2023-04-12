@@ -14,7 +14,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     title: {
       type: String,
       default() {
-        return "\u4E3B\u9875";
+        return "主页";
       }
     },
     backUrl: {
@@ -49,5 +49,5 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     };
   }
 });
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-e4f1132a"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/components/pages/page.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-e4f1132a"], ["__file", "E:/code/kxzc/components/pages/page.vue"]]);
 wx.createComponent(Component);

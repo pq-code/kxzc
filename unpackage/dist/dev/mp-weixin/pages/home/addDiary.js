@@ -29,6 +29,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       return new Promise((resolve, reject) => {
         common_vendor.index.uploadFile({
           url: "http://localhost:3005/weixin/xcx/upload",
+          // 仅为示例，非真实的接口地址
           filePath: url,
           name: "file",
           header: {
@@ -53,7 +54,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         fileList.value.push({
           ...item,
           status: "uploading",
-          message: "\u4E0A\u4F20\u4E2D"
+          message: "上传中"
         });
       });
       for (let i = 0; i < lists.length; i++) {
@@ -83,17 +84,17 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         }),
         d: common_vendor.o(($event) => textContent.value = $event),
         e: common_vendor.p({
-          placeholder: "\u8BF7\u8F93\u5165\u5185\u5BB9",
+          placeholder: "请输入内容",
           modelValue: textContent.value
         }),
         f: common_vendor.o(($event) => addDiaryFn()),
         g: common_vendor.p({
           shape: "circle",
           type: "primary",
-          text: "\u786E\u5B9A"
+          text: "确定"
         }),
         h: common_vendor.p({
-          title: "\u6DFB\u52A0\u65E5\u8BB0"
+          title: "添加日记"
         }),
         i: common_vendor.p({
           loading: loading.value
@@ -102,5 +103,5 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     };
   }
 });
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-0a767883"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/pages/home/addDiary.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-0a767883"], ["__file", "E:/code/kxzc/pages/home/addDiary.vue"]]);
 wx.createPage(MiniProgramPage);

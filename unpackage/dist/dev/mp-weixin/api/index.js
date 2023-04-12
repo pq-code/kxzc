@@ -13,7 +13,7 @@ function requset(url, config, method) {
   const { hideLoading } = config;
   if (!hideLoading) {
     common_vendor.index.showLoading({
-      title: "\u52A0\u8F7D\u4E2D..."
+      title: "加载中..."
     });
   }
   {

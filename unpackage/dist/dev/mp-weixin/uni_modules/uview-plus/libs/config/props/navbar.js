@@ -1,6 +1,7 @@
 "use strict";
 const uni_modules_uviewPlus_libs_config_color = require("../color.js");
 const Navbar = {
+  // navbar 组件
   navbar: {
     safeAreaInsetTop: true,
     placeholder: false,

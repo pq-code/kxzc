@@ -1,5 +1,6 @@
 "use strict";
 const NoticeBar = {
+  // noticeBar
   noticeBar: {
     text: () => [],
     direction: "row",

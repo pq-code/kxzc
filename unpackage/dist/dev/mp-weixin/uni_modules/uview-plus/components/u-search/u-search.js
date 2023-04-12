@@ -101,8 +101,12 @@ const _sfc_main = {
     return {
       keyword: "",
       showClear: false,
+      // 是否显示右边的清除图标
       show: false,
+      // 标记input当前状态是否处于聚焦中，如果是，才会显示右侧的清除控件
       focused: this.focus
+      // 绑定输入框的值
+      // inputValue: this.value
     };
   },
   watch: {
@@ -124,15 +128,19 @@ const _sfc_main = {
   },
   emits: ["clear", "search", "custom", "focus", "blur", "click", "clickIcon", "update:modelValue", "change"],
   methods: {
+    // 目前HX2.6.9 v-model双向绑定无效，故监听input事件获取输入框内容的变化
     inputChange(e) {
       this.keyword = e.detail.value;
     },
+    // 清空输入
+    // 也可以作为用户通过this.$refs形式调用清空输入框内容
     clear() {
       this.keyword = "";
       this.$nextTick(() => {
         this.$emit("clear");
       });
     },
+    // 确定搜索
     search(e) {
       this.$emit("search", e.detail.value);
       try {
@@ -140,6 +148,7 @@ const _sfc_main = {
       } catch (e2) {
       }
     },
+    // 点击右边自定义按钮的事件
     custom() {
       this.$emit("custom", this.keyword);
       try {
@@ -147,12 +156,14 @@ const _sfc_main = {
       } catch (e) {
       }
     },
+    // 获取焦点
     getFocus() {
       this.focused = true;
       if (this.animation && this.showAction)
         this.show = true;
       this.$emit("focus", this.keyword);
     },
+    // 失去焦点
     blur() {
       setTimeout(() => {
         this.focused = false;
@@ -160,10 +171,12 @@ const _sfc_main = {
       this.show = false;
       this.$emit("blur", this.keyword);
     },
+    // 点击搜索框，只有disabled=true时才发出事件，因为禁止了输入，意味着是想跳转真正的搜索页
     clickHandler() {
       if (this.disabled)
         this.$emit("click");
     },
+    // 点击左边图标
     clickIcon() {
       this.$emit("clickIcon");
     }
@@ -230,5 +243,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     D: common_vendor.s(_ctx.$u.addStyle(_ctx.customStyle))
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e082a34a"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-search/u-search.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e082a34a"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-search/u-search.vue"]]);
 wx.createComponent(Component);

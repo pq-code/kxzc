@@ -1,5 +1,6 @@
 "use strict";
 const Parse = {
+  // parse
   parse: {
     copyLink: true,
     errorImg: "",

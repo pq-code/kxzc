@@ -1,5 +1,6 @@
 "use strict";
 const Notify = {
+  // notify组件
   notify: {
     top: 0,
     type: "primary",

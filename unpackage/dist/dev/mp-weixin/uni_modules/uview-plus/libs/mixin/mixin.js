@@ -1,7 +1,9 @@
 "use strict";
 const common_vendor = require("../../../../common/vendor.js");
 const mixin = {
+  // 定义每个组件都可能需要用到的外部样式以及类名
   props: {
+    // 每个组件都有的父组件传递的样式，可以为字符串或者对象形式
     customStyle: {
       type: [Object, String],
       default: () => ({})
@@ -10,10 +12,12 @@ const mixin = {
       type: String,
       default: ""
     },
+    // 跳转的页面路径
     url: {
       type: String,
       default: ""
     },
+    // 页面跳转的类型
     linkType: {
       type: String,
       default: "navigateTo"
@@ -29,6 +33,9 @@ const mixin = {
     this.$u.getRect = this.$uGetRect;
   },
   computed: {
+    // 在2.x版本中，将会把$u挂载到uni对象下，导致在模板中无法使用uni.$u.xxx形式
+    // 所以这里通过computed计算属性将其附加到this.$u上，就可以在模板或者js中使用uni.$u.xxx
+    // 只在nvue环境通过此方式引入完整的$u，其他平台会出现性能问题，非nvue则按需引入（主要原因是props过大）
     $u() {
       return common_vendor.index.$u.deepMerge(common_vendor.index.$u, {
         props: void 0,
@@ -36,6 +43,15 @@ const mixin = {
         mixin: void 0
       });
     },
+    /**
+     * 生成bem规则类名
+     * 由于微信小程序，H5，nvue之间绑定class的差异，无法通过:class="[bem()]"的形式进行同用
+     * 故采用如下折中做法，最后返回的是数组（一般平台）或字符串（支付宝和字节跳动平台），类似['a', 'b', 'c']或'a b c'的形式
+     * @param {String} name 组件名称
+     * @param {Array} fixed 一直会存在的类名
+     * @param {Array} change 会根据变量值为true或者false而出现或者隐藏的类名
+     * @returns {Array|string}
+     */
     bem() {
       return function(name, fixed, change) {
         const prefix = `u-${name}--`;
@@ -55,12 +71,16 @@ const mixin = {
     }
   },
   methods: {
+    // 跳转某一个页面
     openPage(urlKey = "url") {
       const url = this[urlKey];
       if (url) {
         this.$u.route({ type: this.linkType, url });
       }
     },
+    // 查询节点信息
+    // 目前此方法在支付宝小程序中无法获取组件跟接点的尺寸，为支付宝的bug(2020-07-21)
+    // 解决办法为在组件根部再套一个没有任何作用的view元素
     $uGetRect(selector, all) {
       return new Promise((resolve) => {
         common_vendor.index.createSelectorQuery().in(this)[all ? "selectAll" : "select"](selector).boundingClientRect((rect) => {
@@ -86,9 +106,11 @@ const mixin = {
         });
       }
     },
+    // 阻止事件冒泡
     preventEvent(e) {
       e && typeof e.stopPropagation === "function" && e.stopPropagation();
     },
+    // 空操作
     noop(e) {
       this.preventEvent(e);
     }

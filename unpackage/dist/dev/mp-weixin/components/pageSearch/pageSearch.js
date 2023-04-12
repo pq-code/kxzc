@@ -14,7 +14,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     title: {
       type: String,
       default() {
-        return "\u641C\u7D22";
+        return "搜索";
       }
     },
     backUrl: {
@@ -49,5 +49,5 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     };
   }
 });
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-95474626"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/components/pageSearch/pageSearch.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-95474626"], ["__file", "E:/code/kxzc/components/pageSearch/pageSearch.vue"]]);
 wx.createComponent(Component);

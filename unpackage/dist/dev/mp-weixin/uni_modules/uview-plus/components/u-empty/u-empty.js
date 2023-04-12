@@ -100,36 +100,39 @@ const _sfc_main = {
   data() {
     return {
       icons: {
-        car: "\u8D2D\u7269\u8F66\u4E3A\u7A7A",
-        page: "\u9875\u9762\u4E0D\u5B58\u5728",
-        search: "\u6CA1\u6709\u641C\u7D22\u7ED3\u679C",
-        address: "\u6CA1\u6709\u6536\u8D27\u5730\u5740",
-        wifi: "\u6CA1\u6709WiFi",
-        order: "\u8BA2\u5355\u4E3A\u7A7A",
-        coupon: "\u6CA1\u6709\u4F18\u60E0\u5238",
-        favor: "\u6682\u65E0\u6536\u85CF",
-        permission: "\u65E0\u6743\u9650",
-        history: "\u65E0\u5386\u53F2\u8BB0\u5F55",
-        news: "\u65E0\u65B0\u95FB\u5217\u8868",
-        message: "\u6D88\u606F\u5217\u8868\u4E3A\u7A7A",
-        list: "\u5217\u8868\u4E3A\u7A7A",
-        data: "\u6570\u636E\u4E3A\u7A7A",
-        comment: "\u6682\u65E0\u8BC4\u8BBA"
+        car: "购物车为空",
+        page: "页面不存在",
+        search: "没有搜索结果",
+        address: "没有收货地址",
+        wifi: "没有WiFi",
+        order: "订单为空",
+        coupon: "没有优惠券",
+        favor: "暂无收藏",
+        permission: "无权限",
+        history: "无历史记录",
+        news: "无新闻列表",
+        message: "消息列表为空",
+        list: "列表为空",
+        data: "数据为空",
+        comment: "暂无评论"
       }
     };
   },
   computed: {
+    // 组件样式
     emptyStyle() {
       const style = {};
       style.marginTop = common_vendor.index.$u.addUnit(this.marginTop);
       return common_vendor.index.$u.deepMerge(common_vendor.index.$u.addStyle(this.customStyle), style);
     },
+    // 文本样式
     textStyle() {
       const style = {};
       style.color = this.textColor;
       style.fontSize = common_vendor.index.$u.addUnit(this.textSize);
       return style;
     },
+    // 判断icon是否图片路径
     isSrc() {
       return this.icon.indexOf("/") >= 0;
     }
@@ -167,5 +170,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     j: common_vendor.s($options.emptyStyle)
   }) : {});
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-8dd5928e"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-empty/u-empty.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-8dd5928e"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-empty/u-empty.vue"]]);
 wx.createComponent(Component);

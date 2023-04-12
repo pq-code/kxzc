@@ -109,6 +109,7 @@ const _sfc_main = {
       };
       return common_vendor.index.$u.deepMerge(style, common_vendor.index.$u.addStyle(this.customStyle));
     },
+    // 监听多个参数的变化，通过在computed执行对应的操作
     updateChild() {
       return [this.value, this.activeColor, this.inactiveColor];
     },
@@ -134,6 +135,7 @@ const _sfc_main = {
     updateChildren() {
       this.children.length && this.children.map((child) => child.updateFromParent());
     },
+    // 设置用于防止塌陷元素的高度
     async setPlaceholderHeight() {
       if (!this.fixed || !this.placeholder)
         return;
@@ -165,5 +167,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     g: $data.placeholderHeight + "px"
   } : {});
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b9276d10"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-tabbar/u-tabbar.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b9276d10"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-tabbar/u-tabbar.vue"]]);
 wx.createComponent(Component);

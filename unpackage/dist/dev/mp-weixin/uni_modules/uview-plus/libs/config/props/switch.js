@@ -1,5 +1,6 @@
 "use strict";
 const Switch = {
+  // switch
   switch: {
     loading: false,
     disabled: false,

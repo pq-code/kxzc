@@ -20,7 +20,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     dataList: {
       type: Array,
       default() {
-        return [{ title: "\u54C1\u724C" }, { title: "\u4EF7\u683C\u533A\u95F4" }, { title: "\u5E74\u4EFD" }, { title: "\u5730\u533A" }];
+        return [{ title: "品牌" }, { title: "价格区间" }, { title: "年份" }, { title: "地区" }];
       }
     }
   },
@@ -59,5 +59,5 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     };
   }
 });
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-a66da52b"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/components/dropdown/dropdown.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-a66da52b"], ["__file", "E:/code/kxzc/components/dropdown/dropdown.vue"]]);
 wx.createComponent(Component);

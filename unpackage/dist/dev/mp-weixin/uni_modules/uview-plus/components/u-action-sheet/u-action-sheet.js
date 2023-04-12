@@ -97,11 +97,13 @@ require("../../libs/config/props/transition.js");
 require("../../libs/config/props/upload.js");
 const _sfc_main = {
   name: "u-action-sheet",
+  // 一些props参数和methods方法，通过mixin混入，因为其他文件也会用到
   mixins: [uni_modules_uviewPlus_libs_mixin_openType.openType, uni_modules_uviewPlus_libs_mixin_button.button, uni_modules_uviewPlus_libs_mixin_mixin.mixin, uni_modules_uviewPlus_components_uActionSheet_props.props],
   data() {
     return {};
   },
   computed: {
+    // 操作项目的样式
     itemStyle() {
       return (index) => {
         let style = {};
@@ -121,6 +123,7 @@ const _sfc_main = {
         this.$emit("close");
       }
     },
+    // 点击取消按钮
     cancel() {
       this.$emit("close");
     },
@@ -238,5 +241,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-69669810"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-action-sheet/u-action-sheet.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-69669810"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-action-sheet/u-action-sheet.vue"]]);
 wx.createComponent(Component);

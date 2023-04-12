@@ -1,5 +1,6 @@
 "use strict";
 const Text = {
+  // text 组件
   text: {
     type: "",
     show: true,

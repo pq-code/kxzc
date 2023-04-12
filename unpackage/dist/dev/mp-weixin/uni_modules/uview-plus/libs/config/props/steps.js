@@ -1,5 +1,6 @@
 "use strict";
 const Steps = {
+  // steps组件
   steps: {
     direction: "row",
     current: 0,

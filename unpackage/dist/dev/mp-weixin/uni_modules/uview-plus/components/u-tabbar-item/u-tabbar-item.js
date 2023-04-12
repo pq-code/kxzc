@@ -100,6 +100,7 @@ const _sfc_main = {
   data() {
     return {
       isActive: false,
+      // 是否处于激活状态
       parentData: {
         value: null,
         activeColor: "",
@@ -107,8 +108,10 @@ const _sfc_main = {
       }
     };
   },
+  //  微信小程序中 options 选项
   options: {
     virtualHost: true
+    //将自定义节点设置成虚拟的，更加接近Vue组件的表现。我们不希望自定义组件的这个节点本身可以设置样式、响应 flex 布局等
   },
   created() {
     this.init();
@@ -117,7 +120,7 @@ const _sfc_main = {
     init() {
       this.updateParentData();
       if (!this.parent) {
-        common_vendor.index.$u.error("u-tabbar-item\u5FC5\u987B\u642D\u914Du-tabbar\u7EC4\u4EF6\u4F7F\u7528");
+        common_vendor.index.$u.error("u-tabbar-item必须搭配u-tabbar组件使用");
       }
       const index = this.parent.children.indexOf(this);
       this.isActive = (this.name || index) === this.parentData.value;
@@ -125,6 +128,7 @@ const _sfc_main = {
     updateParentData() {
       this.getParentData("u-tabbar");
     },
+    // 此方法将会被父组件u-tabbar调用
     updateFromParent() {
       this.init();
     },
@@ -176,5 +180,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     h: common_vendor.o((...args) => $options.clickHandler && $options.clickHandler(...args))
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e01cdc2c"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-tabbar-item/u-tabbar-item.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e01cdc2c"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-tabbar-item/u-tabbar-item.vue"]]);
 wx.createComponent(Component);

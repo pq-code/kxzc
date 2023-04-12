@@ -99,11 +99,17 @@ const _sfc_main = {
   mixins: [uni_modules_uviewPlus_libs_mixin_mpMixin.mpMixin, uni_modules_uviewPlus_libs_mixin_mixin.mixin, uni_modules_uviewPlus_components_uImage_props.props],
   data() {
     return {
+      // 图片是否加载错误，如果是，则显示错误占位图
       isError: false,
+      // 初始化组件时，默认为加载中状态
       loading: true,
+      // 不透明度，为了实现淡入淡出的效果
       opacity: 1,
+      // 过渡时间，因为props的值无法修改，故需要一个中间值
       durationTime: this.duration,
+      // 图片加载完成时，去掉背景颜色，因为如果是png图片，就会显示灰色的背景
       backgroundStyle: {},
+      // 用于fade模式的控制组件显示与否
       show: false
     };
   },
@@ -135,20 +141,24 @@ const _sfc_main = {
   },
   emits: ["click", "error", "load"],
   methods: {
+    // 点击图片
     onClick() {
       this.$emit("click");
     },
+    // 图片加载失败
     onErrorHandler(err) {
       this.loading = false;
       this.isError = true;
       this.$emit("error", err);
     },
+    // 图片加载完成，标记loading结束
     onLoadHandler(event) {
       this.loading = false;
       this.isError = false;
       this.$emit("load", event);
       this.removeBgColor();
     },
+    // 移除图片的背景色
     removeBgColor() {
       this.backgroundStyle = {
         backgroundColor: "transparent"
@@ -213,5 +223,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-abebd402"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-image/u-image.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-abebd402"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-image/u-image.vue"]]);
 wx.createComponent(Component);

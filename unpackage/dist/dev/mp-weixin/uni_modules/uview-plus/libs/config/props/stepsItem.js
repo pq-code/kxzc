@@ -1,5 +1,6 @@
 "use strict";
 const StepsItem = {
+  // steps-item组件
   stepsItem: {
     title: "",
     desc: "",

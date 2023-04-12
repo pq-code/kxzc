@@ -31,21 +31,21 @@ const _sfc_main = {
         pagePath: "/pages/home/home",
         iconPath: "/static/home.png",
         selectedIconPath: "/static/home_sec.png",
-        text: "\u9996\u9875",
+        text: "首页",
         name: "home"
       },
-      {
-        pagePath: "/pages/tool/home",
-        iconPath: "/static/home.png",
-        selectedIconPath: "/static/home_sec.png",
-        text: "\u5DE5\u5177",
-        name: "tool"
-      },
+      //   {
+      //     pagePath: '/pages/tool/home',
+      //     iconPath: '/static/home.png',
+      //     selectedIconPath: '/static/home_sec.png',
+      //     text: '工具',
+      //     name: 'tool',
+      //   },
       {
         pagePath: "/pages/user/home",
         iconPath: "/static/user.png",
         selectedIconPath: "/static/user_sec.png",
-        text: "\u6211\u7684",
+        text: "我的",
         name: "user"
       }
     ];
@@ -78,7 +78,7 @@ const _sfc_main = {
           return {
             a: item.name,
             b: common_vendor.o(($event) => tabbarClick(item), item.name),
-            c: "900e4cf8-2-" + i0 + ",900e4cf8-1",
+            c: "fc2c5356-2-" + i0 + ",fc2c5356-1",
             d: common_vendor.p({
               text: item.text,
               name: item.name,
@@ -98,5 +98,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/pages/user/home.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "E:/code/kxzc/pages/user/home.vue"]]);
 wx.createPage(MiniProgramPage);

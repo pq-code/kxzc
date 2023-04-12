@@ -2,6 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const value = {
   computed: {
+    // 经处理后需要显示的值
     value() {
       const {
         text,
@@ -11,7 +12,7 @@ const value = {
       } = this;
       if (mode === "price") {
         if (!/^\d+(\.\d+)?$/.test(text)) {
-          common_vendor.index.$u.error("\u91D1\u989D\u6A21\u5F0F\u4E0B\uFF0Ctext\u53C2\u6570\u9700\u8981\u4E3A\u91D1\u989D\u683C\u5F0F");
+          common_vendor.index.$u.error("金额模式下，text参数需要为金额格式");
         }
         if (common_vendor.index.$u.test.func(format)) {
           return format(text);
@@ -19,7 +20,7 @@ const value = {
         return common_vendor.index.$u.priceFormat(text, 2);
       }
       if (mode === "date") {
-        !common_vendor.index.$u.test.date(text) && common_vendor.index.$u.error("\u65E5\u671F\u6A21\u5F0F\u4E0B\uFF0Ctext\u53C2\u6570\u9700\u8981\u4E3A\u65E5\u671F\u6216\u65F6\u95F4\u6233\u683C\u5F0F");
+        !common_vendor.index.$u.test.date(text) && common_vendor.index.$u.error("日期模式下，text参数需要为日期或时间戳格式");
         if (common_vendor.index.$u.test.func(format)) {
           return format(text);
         }
@@ -38,7 +39,7 @@ const value = {
         return text;
       }
       if (mode === "name") {
-        !(typeof text === "string") && common_vendor.index.$u.error("\u59D3\u540D\u6A21\u5F0F\u4E0B\uFF0Ctext\u53C2\u6570\u9700\u8981\u4E3A\u5B57\u7B26\u4E32\u683C\u5F0F");
+        !(typeof text === "string") && common_vendor.index.$u.error("姓名模式下，text参数需要为字符串格式");
         if (common_vendor.index.$u.test.func(format)) {
           return format(text);
         }
@@ -48,13 +49,14 @@ const value = {
         return text;
       }
       if (mode === "link") {
-        !common_vendor.index.$u.test.url(href) && common_vendor.index.$u.error("\u8D85\u94FE\u63A5\u6A21\u5F0F\u4E0B\uFF0Chref\u53C2\u6570\u9700\u8981\u4E3AURL\u683C\u5F0F");
+        !common_vendor.index.$u.test.url(href) && common_vendor.index.$u.error("超链接模式下，href参数需要为URL格式");
         return text;
       }
       return text;
     }
   },
   methods: {
+    // 默认的姓名脱敏规则
     formatName(name) {
       let value2 = "";
       if (name.length === 2) {

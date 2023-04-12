@@ -1,5 +1,6 @@
 "use strict";
 const Subsection = {
+  // subsection组件
   subsection: {
     list: [],
     current: 0,

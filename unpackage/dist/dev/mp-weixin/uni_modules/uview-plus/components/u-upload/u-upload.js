@@ -106,6 +106,7 @@ const _sfc_main = {
     };
   },
   watch: {
+    // 监听文件列表的变化，重新整理内部数据
     fileList: {
       immediate: true,
       handler() {
@@ -124,6 +125,7 @@ const _sfc_main = {
       } = this;
       const lists = fileList.map(
         (item) => Object.assign(Object.assign({}, item), {
+          // 如果item.url为本地选择的blob文件的话，无法判断其为video还是image，此处优先通过accept做判断处理
           isImage: this.accept === "image" || common_vendor.index.$u.test.image(item.url || item.thumb),
           isVideo: this.accept === "video" || common_vendor.index.$u.test.video(item.url || item.thumb),
           deletable: typeof item.deletable === "boolean" ? item.deletable : this.deletable
@@ -165,6 +167,7 @@ const _sfc_main = {
         this.$emit("error", error);
       });
     },
+    // 文件读取之前
     onBeforeRead(file) {
       const {
         beforeRead,
@@ -230,14 +233,16 @@ const _sfc_main = {
         })
       );
     },
+    // 预览图片
     onPreviewImage(item) {
       if (!item.isImage || !this.previewFullImage)
         return;
       common_vendor.index.previewImage({
+        // 先filter找出为图片的item，再返回filter结果中的图片url
         urls: this.lists.filter((item2) => this.accept === "image" || common_vendor.index.$u.test.image(item2.url || item2.thumb)).map((item2) => item2.url || item2.thumb),
         current: item.url || item.thumb,
         fail() {
-          common_vendor.index.$u.toast("\u9884\u89C8\u56FE\u7247\u5931\u8D25");
+          common_vendor.index.$u.toast("预览图片失败");
         }
       });
     },
@@ -258,7 +263,7 @@ const _sfc_main = {
         ),
         current: index,
         fail() {
-          common_vendor.index.$u.toast("\u9884\u89C8\u89C6\u9891\u5931\u8D25");
+          common_vendor.index.$u.toast("预览视频失败");
         }
       });
     },
@@ -306,7 +311,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
           size: "26",
           name: item.isVideo || item.type && item.type === "video" ? "movie" : "folder"
         }),
-        h: common_vendor.t(item.isVideo || item.type && item.type === "video" ? "\u89C6\u9891" : "\u6587\u4EF6")
+        h: common_vendor.t(item.isVideo || item.type && item.type === "video" ? "视频" : "文件")
       }, {
         i: item.status === "uploading" || item.status === "failed"
       }, item.status === "uploading" || item.status === "failed" ? common_vendor.e({
@@ -379,5 +384,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     m: common_vendor.s(_ctx.$u.addStyle(_ctx.customStyle))
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-c8491d64"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-upload/u-upload.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-c8491d64"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-upload/u-upload.vue"]]);
 wx.createComponent(Component);

@@ -4,12 +4,13 @@ const {
   color
 } = uni_modules_uviewPlus_libs_config_config.config;
 const Link = {
+  // link超链接组件props参数
   link: {
     color: color["u-primary"],
     fontSize: 15,
     underLine: false,
     href: "",
-    mpTips: "\u94FE\u63A5\u5DF2\u590D\u5236\uFF0C\u8BF7\u5728\u6D4F\u89C8\u5668\u6253\u5F00",
+    mpTips: "链接已复制，请在浏览器打开",
     lineColor: "",
     text: ""
   }

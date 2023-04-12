@@ -1,5 +1,6 @@
 "use strict";
 const Rate = {
+  // rate组件
   rate: {
     value: 1,
     count: 5,

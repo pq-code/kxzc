@@ -1,5 +1,6 @@
 "use strict";
 const List = {
+  // list 组件
   list: {
     showScrollbar: false,
     lowerThreshold: 50,

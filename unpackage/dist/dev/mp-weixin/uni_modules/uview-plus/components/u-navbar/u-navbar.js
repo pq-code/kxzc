@@ -101,12 +101,14 @@ const _sfc_main = {
     return {};
   },
   methods: {
+    // 点击左侧区域
     leftClick() {
       this.$emit("leftClick");
       if (this.autoBack) {
         common_vendor.index.navigateBack();
       }
     },
+    // 点击右侧区域
     rightClick() {
       this.$emit("rightClick");
     }
@@ -174,5 +176,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     x: common_vendor.n(_ctx.fixed && "u-navbar--fixed")
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-f631659b"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-f631659b"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
 wx.createComponent(Component);

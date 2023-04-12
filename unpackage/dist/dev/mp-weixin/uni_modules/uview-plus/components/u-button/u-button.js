@@ -103,6 +103,7 @@ const _sfc_main = {
     return {};
   },
   computed: {
+    // 生成bem风格的类名
     bemClass() {
       if (!this.color) {
         return this.bem(
@@ -159,6 +160,7 @@ const _sfc_main = {
       }
       return style;
     },
+    // nvue版本按钮的字体不会继承父组件的颜色，需要对每一个text组件进行单独的设置
     nvueTextStyle() {
       let style = {};
       if (this.type === "info") {
@@ -170,6 +172,7 @@ const _sfc_main = {
       style.fontSize = this.textSize + "px";
       return style;
     },
+    // 字体大小
     textSize() {
       let fontSize = 14, { size } = this;
       if (size === "large")
@@ -199,6 +202,7 @@ const _sfc_main = {
         }, this.throttleTime);
       }
     },
+    // 下面为对接uniapp官方按钮开放能力事件回调的对接
     getphonenumber(res) {
       this.$emit("getphonenumber", res);
     },
@@ -281,5 +285,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     F: common_vendor.n($options.bemClass)
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-5ce41ee6"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-button/u-button.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-5ce41ee6"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-button/u-button.vue"]]);
 wx.createComponent(Component);

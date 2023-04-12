@@ -106,8 +106,10 @@ const _sfc_main = {
       gridNum: 12
     };
   },
+  //  微信小程序中 options 选项
   options: {
     virtualHost: true
+    // 将自定义节点设置成虚拟的，更加接近Vue组件的表现。我们不希望自定义组件的这个节点本身可以设置样式、响应 flex 布局等
   },
   computed: {
     uJustify() {
@@ -128,11 +130,13 @@ const _sfc_main = {
     },
     colStyle() {
       const style = {
+        // 这里写成"padding: 0 10px"的形式是因为nvue的需要
         paddingLeft: common_vendor.index.$u.addUnit(common_vendor.index.$u.getPx(this.parentData.gutter) / 2),
         paddingRight: common_vendor.index.$u.addUnit(common_vendor.index.$u.getPx(this.parentData.gutter) / 2),
         alignItems: this.uAlignItem,
         justifyContent: this.uJustify,
         textAlign: this.textAlign,
+        // 在非nvue上，使用百分比形式
         flex: `0 0 ${100 / this.gridNum * this.span}%`,
         marginLeft: 100 / 12 * this.offset + "%"
       };
@@ -162,5 +166,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     c: common_vendor.o((...args) => $options.clickHandler && $options.clickHandler(...args))
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-2ae1a870"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-col/u-col.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-2ae1a870"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-col/u-col.vue"]]);
 wx.createComponent(Component);

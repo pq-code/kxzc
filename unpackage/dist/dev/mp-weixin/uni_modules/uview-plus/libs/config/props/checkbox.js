@@ -1,5 +1,6 @@
 "use strict";
 const Checkbox = {
+  // checkbox组件
   checkbox: {
     name: "",
     shape: "",

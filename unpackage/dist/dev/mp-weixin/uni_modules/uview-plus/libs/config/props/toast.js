@@ -1,5 +1,6 @@
 "use strict";
 const Toast = {
+  // toast组件
   toast: {
     zIndex: 10090,
     loading: false,

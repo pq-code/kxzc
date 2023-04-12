@@ -1,8 +1,9 @@
 "use strict";
 const Section = {
+  // u-section组件
   section: {
     title: "",
-    subTitle: "\u66F4\u591A",
+    subTitle: "更多",
     right: true,
     fontSize: 15,
     bold: true,

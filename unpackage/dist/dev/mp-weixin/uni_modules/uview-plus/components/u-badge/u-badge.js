@@ -98,10 +98,12 @@ const _sfc_main = {
   name: "u-badge",
   mixins: [uni_modules_uviewPlus_libs_mixin_mpMixin.mpMixin, uni_modules_uviewPlus_components_uBadge_props.props, uni_modules_uviewPlus_libs_mixin_mixin.mixin],
   computed: {
+    // 是否将badge中心与父组件右上角重合
     boxStyle() {
       let style = {};
       return style;
     },
+    // 整个组件的样式
     badgeStyle() {
       const style = {};
       if (this.color) {
@@ -148,5 +150,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     h: common_vendor.s($options.badgeStyle)
   } : {});
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-06cca9b7"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-badge/u-badge.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-06cca9b7"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-badge/u-badge.vue"]]);
 wx.createComponent(Component);

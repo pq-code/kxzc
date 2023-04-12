@@ -1,5 +1,6 @@
 "use strict";
 const Empty = {
+  // empty组件
   empty: {
     icon: "",
     text: "",

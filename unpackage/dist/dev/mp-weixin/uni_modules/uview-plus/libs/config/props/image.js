@@ -1,5 +1,6 @@
 "use strict";
 const Image = {
+  // image组件
   image: {
     src: "",
     mode: "aspectFill",

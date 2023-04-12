@@ -33,15 +33,15 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const showSex = common_vendor.ref(false);
     const actions = common_vendor.ref([
       {
-        name: "\u7537",
+        name: "男",
         value: 1
       },
       {
-        name: "\u5973",
+        name: "女",
         value: 2
       },
       {
-        name: "\u672A\u77E5",
+        name: "未知",
         value: 0
       }
     ]);
@@ -58,7 +58,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         formData.value.userAvatar = user_info.avatarUrl;
         formData.value.userName = user_info.nickName;
         formData.value.province = user_info.province;
-        formData.value.sex = user_info.gender == 0 ? "\u672A\u77E5" : user_info.gender == 1 ? "\u7537" : "\u5973";
+        formData.value.sex = user_info.gender == 0 ? "未知" : user_info.gender == 1 ? "男" : "女";
       }
     });
     const onChooseAvatar = (event) => {
@@ -88,7 +88,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         }),
         f: common_vendor.sr("name", "1358535a-4,1358535a-3"),
         g: common_vendor.p({
-          label: "\u6635\u79F0",
+          label: "昵称",
           prop: "formData.name",
           borderBottom: true
         }),
@@ -96,7 +96,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         i: common_vendor.p({
           disabled: true,
           disabledColor: "#ffffff",
-          placeholder: "\u8BF7\u9009\u62E9\u6027\u522B",
+          placeholder: "请选择性别",
           border: "none",
           modelValue: formData.value.sex
         }),
@@ -106,7 +106,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         k: common_vendor.sr("sex", "1358535a-6,1358535a-3"),
         l: common_vendor.o(($event) => showSex.value = true),
         m: common_vendor.p({
-          label: "\u6027\u522B",
+          label: "性别",
           prop: "formData.sex",
           borderBottom: true
         }),
@@ -122,21 +122,21 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         r: common_vendor.p({
           show: showSex.value,
           actions: actions.value,
-          title: "\u8BF7\u9009\u62E9\u6027\u522B",
-          description: "\u5982\u679C\u9009\u62E9\u4FDD\u5BC6\u4F1A\u62A5\u9519"
+          title: "请选择性别",
+          description: "如果选择保密会报错"
         }),
         s: common_vendor.o(($event) => editUserInfo()),
         t: common_vendor.p({
           shape: "circle",
           type: "primary",
-          text: "\u786E\u5B9A"
+          text: "确定"
         }),
         v: common_vendor.p({
-          title: "\u4FEE\u6539\u7528\u6237\u4FE1\u606F"
+          title: "修改用户信息"
         })
       };
     };
   }
 });
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-1358535a"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/pages/user/editUserInfo.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-1358535a"], ["__file", "E:/code/kxzc/pages/user/editUserInfo.vue"]]);
 wx.createPage(MiniProgramPage);

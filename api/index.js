@@ -1,4 +1,4 @@
-import qs from 'qs' // 处理data
+
 
 import { wxService } from './service/wxService'
 

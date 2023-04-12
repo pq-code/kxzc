@@ -1,5 +1,6 @@
 "use strict";
 const Sticky = {
+  // sticky组件
   sticky: {
     offsetTop: 0,
     customNavHeight: 0,

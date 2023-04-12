@@ -8,6 +8,7 @@ const wxService = (urls, config, method) => {
   let url = baseURL + urls;
   let data = {
     provider: "weixin",
+    // 微信登录标识
     ...config
   };
   let header;
@@ -36,26 +37,26 @@ const wxService = (urls, config, method) => {
         if (res.code == 0) {
           resolve(res);
         } else {
-          utils_index.showToast(api_error_errTips.errTips[res.code] || res.message || "\u672A\u77E5\u9519\u8BEF");
+          utils_index.showToast(api_error_errTips.errTips[res.code] || res.message || "未知错误");
         }
       },
       fail: (err) => {
         let message = "";
         switch (err) {
           case 401:
-            message = "token \u5931\u6548\uFF0C\u8BF7\u91CD\u65B0\u767B\u5F55";
+            message = "token 失效，请重新登录";
             break;
           case 403:
-            message = "\u62D2\u7EDD\u8BBF\u95EE";
+            message = "拒绝访问";
             break;
           case 404:
-            message = "\u8BF7\u6C42\u5730\u5740\u9519\u8BEF";
+            message = "请求地址错误";
             break;
           case 500:
-            message = "\u670D\u52A1\u5668\u6545\u969C";
+            message = "服务器故障";
             break;
           default:
-            message = "\u7F51\u7EDC\u8FDE\u63A5\u6545\u969C";
+            message = "网络连接故障";
         }
         utils_index.showToast(message);
         reject(err);

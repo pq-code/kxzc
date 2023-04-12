@@ -1,5 +1,6 @@
 "use strict";
 const Cell = {
+  // cell组件的props
   cell: {
     customClass: "",
     title: "",

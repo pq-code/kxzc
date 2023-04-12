@@ -1,5 +1,6 @@
 "use strict";
 const Tag = {
+  // tag 组件
   tag: {
     type: "primary",
     disabled: false,

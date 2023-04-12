@@ -1,14 +1,15 @@
 "use strict";
 const Search = {
+  // search
   search: {
     shape: "round",
     bgColor: "#f2f2f2",
-    placeholder: "\u8BF7\u8F93\u5165\u5173\u952E\u5B57",
+    placeholder: "请输入关键字",
     clearabled: true,
     focus: false,
     showAction: true,
     actionStyle: () => ({}),
-    actionText: "\u641C\u7D22",
+    actionText: "搜索",
     inputAlign: "left",
     inputStyle: () => ({}),
     disabled: false,

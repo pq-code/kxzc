@@ -99,10 +99,15 @@ const _sfc_main = {
   mixins: [uni_modules_uviewPlus_libs_mixin_mpMixin.mpMixin, uni_modules_uviewPlus_libs_mixin_mixin.mixin, uni_modules_uviewPlus_components_uTextarea_props.props],
   data() {
     return {
+      // 输入框的值
       innerValue: "",
+      // 是否处于获得焦点状态
       focused: false,
+      // value是否第一次变化，在watch中，由于加入immediate属性，会在第一次触发，此时不应该认为value发生了变化
       firstChange: true,
+      // value绑定值的变化是由内部还是外部引起的
       changeFromInner: false,
+      // 过滤处理方法
       innerFormatter: (value) => value
     };
   },
@@ -119,6 +124,7 @@ const _sfc_main = {
     }
   },
   computed: {
+    // 组件的类名
     textareaClass() {
       let classes = [], { border, disabled } = this;
       border === "surround" && (classes = classes.concat(["u-border", "u-textarea--radius"]));
@@ -129,6 +135,7 @@ const _sfc_main = {
       disabled && classes.push("u-textarea--disabled");
       return classes.join(" ");
     },
+    // 组件的样式
     textareaStyle() {
       const style = {};
       return common_vendor.index.$u.deepMerge(style, common_vendor.index.$u.addStyle(this.customStyle));
@@ -136,6 +143,7 @@ const _sfc_main = {
   },
   emits: ["update:modelValue", "linechange", "focus", "blur", "change", "confirm", "keyboardheightchange"],
   methods: {
+    // 在微信小程序中，不支持将函数当做props参数，故只能通过ref形式调用
     setFormatter(e) {
       this.innerFormatter = e;
     },
@@ -159,6 +167,7 @@ const _sfc_main = {
         this.valueChange();
       });
     },
+    // 内容发生变化，进行处理
     valueChange() {
       const value = this.innerValue;
       this.$nextTick(() => {
@@ -214,5 +223,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     G: common_vendor.s($options.textareaStyle)
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b6c174a6"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-textarea/u-textarea.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b6c174a6"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-textarea/u-textarea.vue"]]);
 wx.createComponent(Component);

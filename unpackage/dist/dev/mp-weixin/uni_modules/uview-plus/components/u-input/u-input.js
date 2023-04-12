@@ -99,10 +99,15 @@ const _sfc_main = {
   mixins: [uni_modules_uviewPlus_libs_mixin_mpMixin.mpMixin, uni_modules_uviewPlus_libs_mixin_mixin.mixin, uni_modules_uviewPlus_components_uInput_props.props],
   data() {
     return {
+      // 输入框的值
       innerValue: "",
+      // 是否处于获得焦点状态
       focused: false,
+      // value是否第一次变化，在watch中，由于加入immediate属性，会在第一次触发，此时不应该认为value发生了变化
       firstChange: true,
+      // value绑定值的变化是由内部还是外部引起的
       changeFromInner: false,
+      // 过滤处理方法
       innerFormatter: (value) => value
     };
   },
@@ -117,10 +122,12 @@ const _sfc_main = {
     }
   },
   computed: {
+    // 是否显示清除控件
     isShowClear() {
       const { clearable, readonly, focused, innerValue } = this;
       return !!clearable && !readonly && !!focused && innerValue !== "";
     },
+    // 组件的类名
     inputClass() {
       let classes = [], { border, disabled, shape } = this;
       border === "surround" && (classes = classes.concat(["u-border", "u-input--radius"]));
@@ -131,6 +138,7 @@ const _sfc_main = {
       ]));
       return classes.join(" ");
     },
+    // 组件的样式
     wrapperStyle() {
       const style = {};
       if (this.disabled) {
@@ -146,6 +154,7 @@ const _sfc_main = {
       }
       return common_vendor.index.$u.deepMerge(style, common_vendor.index.$u.addStyle(this.customStyle));
     },
+    // 输入框的样式
     inputStyle() {
       const style = {
         color: this.color,
@@ -157,9 +166,11 @@ const _sfc_main = {
   },
   emits: ["update:modelValue", "focus", "blur", "change", "confirm", "clear", "keyboardheightchange"],
   methods: {
+    // 在微信小程序中，不支持将函数当做props参数，故只能通过ref形式调用
     setFormatter(e) {
       this.innerFormatter = e;
     },
+    // 当键盘输入时，触发input事件
     onInput(e) {
       let { value = "" } = e.detail || {};
       const formatter = this.formatter || this.innerFormatter;
@@ -170,6 +181,7 @@ const _sfc_main = {
         this.valueChange();
       });
     },
+    // 输入框失去焦点时触发
     onBlur(event) {
       this.$emit("blur", event.detail.value);
       common_vendor.index.$u.sleep(50).then(() => {
@@ -177,16 +189,21 @@ const _sfc_main = {
       });
       common_vendor.index.$u.formValidate(this, "blur");
     },
+    // 输入框聚焦时触发
     onFocus(event) {
       this.focused = true;
       this.$emit("focus");
     },
+    // 点击完成按钮时触发
     onConfirm(event) {
       this.$emit("confirm", this.innerValue);
     },
+    // 键盘高度发生变化的时候触发此事件
+    // 兼容性：微信小程序2.7.0+、App 3.1.0+
     onkeyboardheightchange() {
       this.$emit("keyboardheightchange");
     },
+    // 内容发生变化，进行处理
     valueChange() {
       const value = this.innerValue;
       this.$nextTick(() => {
@@ -196,6 +213,7 @@ const _sfc_main = {
         common_vendor.index.$u.formValidate(this, "change");
       });
     },
+    // 点击清除控件
     onClear() {
       this.innerValue = "";
       this.$nextTick(() => {
@@ -203,6 +221,11 @@ const _sfc_main = {
         this.$emit("clear");
       });
     },
+    /**
+     * 在安卓nvue上，事件无法冒泡
+     * 在某些时间，我们希望监听u-from-item的点击事件，此时会导致点击u-form-item内的u-input后
+     * 无法触发u-form-item的点击事件，这里通过手动调用u-form-item的方法进行触发
+     */
     clickHandler() {
     }
   }
@@ -273,5 +296,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     J: common_vendor.s($options.wrapperStyle)
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-df79975b"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-input/u-input.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-df79975b"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-input/u-input.vue"]]);
 wx.createComponent(Component);

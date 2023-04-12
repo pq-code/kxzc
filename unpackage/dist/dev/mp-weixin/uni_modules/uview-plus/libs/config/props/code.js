@@ -1,10 +1,11 @@
 "use strict";
 const Code = {
+  // code 组件
   code: {
     seconds: 60,
-    startText: "\u83B7\u53D6\u9A8C\u8BC1\u7801",
-    changeText: "X\u79D2\u91CD\u65B0\u83B7\u53D6",
-    endText: "\u91CD\u65B0\u83B7\u53D6",
+    startText: "获取验证码",
+    changeText: "X秒重新获取",
+    endText: "重新获取",
     keepRunning: false,
     uniqueKey: ""
   }

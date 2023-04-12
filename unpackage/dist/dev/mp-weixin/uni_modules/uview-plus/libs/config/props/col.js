@@ -1,5 +1,6 @@
 "use strict";
 const Col = {
+  // col 组件
   col: {
     span: 12,
     offset: 0,

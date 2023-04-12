@@ -1,5 +1,6 @@
 "use strict";
 const CodeInput = {
+  // codeInput 组件
   codeInput: {
     adjustPosition: true,
     maxlength: 6,

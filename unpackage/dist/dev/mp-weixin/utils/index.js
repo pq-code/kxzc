@@ -42,7 +42,7 @@ const getLoginFn = () => {
     return new Promise((resolve, reject) => {
       common_vendor.index.getUserInfo({
         provider: "weixin",
-        desc: "\u83B7\u53D6\u4F60\u7684\u6635\u79F0\u3001\u5934\u50CF\u3001\u5730\u533A\u53CA\u6027\u522B",
+        desc: "获取你的昵称、头像、地区及性别",
         lang: "zh_CN",
         timeout: 3e3,
         success(res) {

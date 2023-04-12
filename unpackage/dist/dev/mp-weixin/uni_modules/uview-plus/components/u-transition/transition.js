@@ -7,9 +7,11 @@ const getClassNames = (name) => ({
 });
 const transition = {
   methods: {
+    // 组件被点击发出事件
     clickHandler() {
       this.$emit("click");
     },
+    // vue版本的组件进场处理
     vueEnter() {
       const classNames = getClassNames(this.mode);
       this.status = "enter";
@@ -24,6 +26,7 @@ const transition = {
         this.classes = classNames["enter-to"];
       });
     },
+    // 动画离场处理
     vueLeave() {
       if (!this.display)
         return;
@@ -38,6 +41,7 @@ const transition = {
         this.classes = classNames["leave-to"];
       });
     },
+    // 完成过渡后触发
     onTransitionEnd() {
       if (this.transitionEnded)
         return;

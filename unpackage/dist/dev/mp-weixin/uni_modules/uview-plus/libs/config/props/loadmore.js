@@ -1,5 +1,6 @@
 "use strict";
 const Loadmore = {
+  // loadmore 组件
   loadmore: {
     status: "loadmore",
     bgColor: "transparent",
@@ -8,9 +9,9 @@ const Loadmore = {
     iconSize: 17,
     color: "#606266",
     loadingIcon: "spinner",
-    loadmoreText: "\u52A0\u8F7D\u66F4\u591A",
-    loadingText: "\u6B63\u5728\u52A0\u8F7D...",
-    nomoreText: "\u6CA1\u6709\u66F4\u591A\u4E86",
+    loadmoreText: "加载更多",
+    loadingText: "正在加载...",
+    nomoreText: "没有更多了",
     isDot: false,
     iconColor: "#b7b7b7",
     marginTop: 10,

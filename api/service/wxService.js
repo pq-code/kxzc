@@ -1,4 +1,4 @@
-import qs from 'qs' // 处理data
+
 import { showToast } from "../../utils/index"
 import { errTips } from '../error/errTips';
 

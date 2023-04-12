@@ -4,6 +4,7 @@ const {
   color
 } = uni_modules_uviewPlus_libs_config_config.config;
 const LoadingIcon = {
+  // loading-icon加载中图标组件
   loadingIcon: {
     show: true,
     color: color["u-tips-color"],

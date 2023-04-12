@@ -99,16 +99,23 @@ const _sfc_main = {
   mixins: [uni_modules_uviewPlus_libs_mixin_mpMixin.mpMixin, uni_modules_uviewPlus_libs_mixin_mixin.mixin, uni_modules_uviewPlus_components_uFormItem_props.props],
   data() {
     return {
+      // 错误提示语
       message: "",
       parentData: {
+        // 提示文本的位置
         labelPosition: "left",
+        // 提示文本对齐方式
         labelAlign: "left",
+        // 提示文本的样式
         labelStyle: {},
+        // 提示文本的宽度
         labelWidth: 45,
+        // 错误提示方式
         errorType: "message"
       }
     };
   },
+  // 组件创建完成时，将当前实例保存到u-form中
   computed: {
     propsLine() {
       return common_vendor.index.$u.props.line;
@@ -121,20 +128,24 @@ const _sfc_main = {
     init() {
       this.updateParentData();
       if (!this.parent) {
-        common_vendor.index.$u.error("u-form-item\u9700\u8981\u7ED3\u5408u-form\u7EC4\u4EF6\u4F7F\u7528");
+        common_vendor.index.$u.error("u-form-item需要结合u-form组件使用");
       }
     },
+    // 获取父组件的参数
     updateParentData() {
       this.getParentData("u-form");
     },
+    // 移除u-form-item的校验结果
     clearValidate() {
       this.message = null;
     },
+    // 清空当前的组件的校验结果，并重置为初始值
     resetField() {
       const value = common_vendor.index.$u.getProperty(this.parent.originalModel, this.prop);
       common_vendor.index.$u.setProperty(this.parent.model, this.prop, value);
       this.message = null;
     },
+    // 点击组件
     clickHandler() {
       this.$emit("click");
     }
@@ -191,5 +202,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   } : {});
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-42bac3de"], ["__file", "/Users/zhangpq/Desktop/Sourcetree/wx/kxzc/uni_modules/uview-plus/components/u-form-item/u-form-item.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-42bac3de"], ["__file", "E:/code/kxzc/uni_modules/uview-plus/components/u-form-item/u-form-item.vue"]]);
 wx.createComponent(Component);

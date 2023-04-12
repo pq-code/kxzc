@@ -1,5 +1,6 @@
 "use strict";
 const SwipeActionItem = {
+  // swipeActionItem 组件
   swipeActionItem: {
     show: false,
     name: "",

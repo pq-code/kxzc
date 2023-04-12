@@ -1,5 +1,6 @@
 "use strict";
 const Input = {
+  // index 组件
   input: {
     value: "",
     type: "text",

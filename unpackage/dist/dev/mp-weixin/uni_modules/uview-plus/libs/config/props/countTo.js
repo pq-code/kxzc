@@ -1,5 +1,6 @@
 "use strict";
 const CountTo = {
+  // countTo 组件
   countTo: {
     startVal: 0,
     endVal: 0,
